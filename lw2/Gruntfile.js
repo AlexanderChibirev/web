@@ -27,7 +27,7 @@ module.exports = function( grunt ) {
                 dest: 'build/styles.css'
             },
             js: {
-                src: ['project/js/Main.js', 'project/js/Shape.js', 'project/js/Circle.js', 'project/js/Rectangle.js', 'project/js/Triangle.js', 'project/js/ShapeType.js', 'project/js/ShapeManager.js'],
+                src: ['project/js/Shape.js', 'project/js/Circle.js', 'project/js/Rectangle.js', 'project/js/Triangle.js', 'project/js/ShapeType.js', 'project/js/ShapeManager.js', 'project/js/Main.js'],
                 dest: 'build/scripts.js'
             },
 			html: {
@@ -59,7 +59,7 @@ module.exports = function( grunt ) {
             },
 			html: {
 				files: ['project/index.html'],
-                tasks: ['cachebreaker']
+                tasks: ['concat:html', 'cachebreaker']
 			}
         }
     });

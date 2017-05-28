@@ -3,7 +3,7 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link href="styles.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
@@ -23,8 +23,8 @@
 				<option value="">Круг</option>
             </select>
             <div class="change_color toolbar_element">
-                <div class="color_shape"><input id="color_shape"></div>
-                <div class="color_border"><input id="color_border"></div>
+                <div class="color_shape"><input class="col-md-2 form-control" id="color_shape"></div>
+                <div class="color_border"><input class="form-control" id="color_border"></div>
             </div>
         </div>
         <div class="setting box_sizing output_line has_margin">
@@ -33,10 +33,7 @@
             <button class="draw_shape_button" id="draw_shape_button">нарисовать</button>
         </div>
     </div>
-	
-	  <script>
-        main();
-    </script>
+	<script type="text/javascript" src="scripts.js"></script>
 </body>
 
 </html>

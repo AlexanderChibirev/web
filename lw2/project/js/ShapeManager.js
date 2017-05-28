@@ -31,9 +31,9 @@ ShapeManager.prototype = {
 		this._createSettingField();
 
 		this._currentShape = this._shapes[index - 1];
-		const type = (index == 0) ? "" : this._currentShape.type();
+		var type = (index == 0) ? "" : this._currentShape.type();
 
-		const settingTitle = document.getElementById("setting_title");
+		var settingTitle = document.getElementById("setting_title");
 		if(type!="") {			
 			settingTitle.textContent = "Параметры " + type + "а";
 		}
@@ -75,8 +75,8 @@ ShapeManager.prototype = {
 	},
 
 	_clearCanvas: function () {
-		const height = this._canvasElement.offsetHeight;
-		const width = this._canvasElement.offsetWidth;
+		var height = this._canvasElement.offsetHeight;
+		var width = this._canvasElement.offsetWidth;
 		this._ctx.clearRect(0,0, width, height);
 	},
 
@@ -90,26 +90,26 @@ ShapeManager.prototype = {
 	},
 
 	_setEditTextColorListener: function () {
-		const colorShape = document.getElementById("color_shape");
+		var colorShape = document.getElementById("color_shape");
 		colorShape.onchange = function () {
-			const color = colorShape.value;
+			var color = colorShape.value;
 			if (this._currentShape && color != "")
 				this._currentShape.setFillColor(color);
 		}.bind(this);
 
-		const colorBorder = document.getElementById("color_border");
+		var colorBorder = document.getElementById("color_border");
 		colorBorder.onchange = function () {
-			const color = colorBorder.value;
+			var color = colorBorder.value;
 			if (this._currentShape && color != "")
 				this._currentShape.setBorderColor(color);
 		}.bind(this);
 	},
 
 	_outputData: function (firstData, secondData) {
-		const perimeterContainer = document.getElementById("perimeter");
+		var perimeterContainer = document.getElementById("perimeter");
 		perimeterContainer.textContent = firstData;
 
-		const areaContainer = document.getElementById("area");
+		var areaContainer = document.getElementById("area");
 		areaContainer.textContent = secondData;
 	},
 
@@ -172,7 +172,7 @@ ShapeManager.prototype = {
 	},
 
 	_createInputField: function (text, handler, value) {
-		const input = document.createElement("input");
+		var input = document.createElement("input");
 		input.setAttribute("class", "input");
 		input.setAttribute("placeholder", text);
 		if (value > 0)

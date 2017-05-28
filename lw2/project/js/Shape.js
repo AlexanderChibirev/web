@@ -22,7 +22,9 @@ Shape.prototype = {
 		return this._fillColor;
 	},
 	
-	draw: function(ctx) {},
+	draw: function(ctx) {
+		ctx;
+	},
 	
 	type: function() {
 		return this._type;

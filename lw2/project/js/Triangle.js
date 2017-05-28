@@ -35,17 +35,17 @@ Triangle.prototype.getVertex3 = function () {
 };
 
 Triangle.prototype.getArea = function() {
-	const perimeter = this.calculatePerimeter();
-	const sideAB = this._getSide( {x: this._vertex1.x, y: this._vertex1.y}, {x: this._vertex2.x, y: this._vertex2.y});
-	const sideAC = this._getSide( {x: this._vertex1.x, y: this._vertex1.y}, {x: this._vertex3.x, y: this._vertex3.y});
-	const sideBC = this._getSide( {x: this._vertex2.x, y: this._vertex2.y}, {x: this._vertex3.x, y: this._vertex3.y});
+	var perimeter = this.getPerimeter();
+	var sideAB = this._getSide( {x: this._vertex1.x, y: this._vertex1.y}, {x: this._vertex2.x, y: this._vertex2.y});
+	var sideAC = this._getSide( {x: this._vertex1.x, y: this._vertex1.y}, {x: this._vertex3.x, y: this._vertex3.y});
+	var sideBC = this._getSide( {x: this._vertex2.x, y: this._vertex2.y}, {x: this._vertex3.x, y: this._vertex3.y});
 	return Math.abs(Math.sqrt(perimeter * (perimeter - sideAB) * (perimeter - sideAC) * (perimeter - sideBC)));
 };
 
 Triangle.prototype.getPerimeter = function() {
-	const sideAB = this._getSide({ x: this._vertex1.x, y: this._vertex1.y}, { x: this._vertex2.x, y: this._vertex2.y});
-	const sideAC = this._getSide({ x: this._vertex1.x, y: this._vertex1.y}, { x: this._vertex3.x, y: this._vertex3.y});
-	const sideBC = this._getSide({ x: this._vertex2.x, y: this._vertex2.y}, { x: this._vertex3.x, y: this._vertex3.y});
+	var sideAB = this._getSide({ x: this._vertex1.x, y: this._vertex1.y}, { x: this._vertex2.x, y: this._vertex2.y});
+	var sideAC = this._getSide({ x: this._vertex1.x, y: this._vertex1.y}, { x: this._vertex3.x, y: this._vertex3.y});
+	var sideBC = this._getSide({ x: this._vertex2.x, y: this._vertex2.y}, { x: this._vertex3.x, y: this._vertex3.y});
 	return (sideAB + sideAC + sideBC) * 0.5;
 };
 
